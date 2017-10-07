@@ -32,7 +32,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{empId}")
-    public MyMessage getOne(@PathVariable Integer empId) {
+    public MyMessage getEmp(@PathVariable Integer empId) {
         Map data = new HashMap();
         Employee employee = employeeService.getOne(empId);
         data.put("emp", employee);
@@ -41,7 +41,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{pageNum}")
-    public MyMessage getAll(@PathVariable Integer pageNum) {
+    public MyMessage listEmp(@PathVariable Integer pageNum) {
         Map data = new HashMap();
         List<Employee> list = employeeService.getAll(pageNum);
         data.put("list", list);
